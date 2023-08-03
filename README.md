@@ -7,4 +7,4 @@ The Laravel Query Logger Middleware is a package that provides a middleware for 
 You can install this package via Composer:
 
 ```bash
-composer require yourvendor/query-logger-middleware
+composer require zxygel0913/query-logger-middleware
