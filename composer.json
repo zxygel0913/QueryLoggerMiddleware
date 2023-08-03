@@ -1,0 +1,16 @@
+{
+    "name": "zxygel0913/query-logger-middleware",
+    "description": "Laravel middleware for logging queries with duplicate prevention.",
+    "type": "library",
+    "keywords": ["laravel", "middleware", "query logging"],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Zxygel0913\\QueryLoggerMiddleware\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.3",
+        "illuminate/support": "^8.0"
+    }
+}
