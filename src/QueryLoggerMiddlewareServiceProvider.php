@@ -19,11 +19,5 @@ class QueryLoggerMiddlewareServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app['router']->aliasMiddleware('logqueries', LogQueries::class);
-
-        if ($this->app->runningInConsole()) {
-            $this->publishes([
-                __DIR__.'/../config/query-logger.php' => config_path('query-logger.php'),
-            ], 'query-logger-config'); // Use the correct tag here
-        }
     }
 }
