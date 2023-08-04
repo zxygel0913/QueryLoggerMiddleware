@@ -52,14 +52,14 @@ class LogQueries
 
         // Log only queries that take longer than 100ms
         if ($executionTime > 0.1) {
-            Log::warning('Slow Query: ' . $query->sql, [
+            Log::channel(env('QUERY_LOG_CHANNEL','stack'))->warning('Slow Query: ' . $query->sql, [
                 'bindings' => $query->bindings,
                 'execution_time' => $executionTime . 's',
                 'url_origin' => $urlOrigin,
                 'ip_address' => $ipAddress,
             ]);
         } else {
-            Log::debug('Query: ' . $query->sql, [
+            Log::channel(env('QUERY_LOG_CHANNEL','stack'))->debug('Query: ' . $query->sql, [
                 'bindings' => $query->bindings,
                 'execution_time' => $executionTime . 's',
                 'url_origin' => $urlOrigin,
