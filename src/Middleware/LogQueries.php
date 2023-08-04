@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Zxygel0913\QueryLoggerMiddleware\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
@@ -15,7 +15,7 @@ class LogQueries
     public function handle(Request $request, Closure $next): Response
     {
         // Check if query logging is enabled for this request
-        if (config('app.debug') && config('app.log_queries')) {
+        if (config('app.debug') && config('query-logger.log_queries')) {
             DB::listen(function ($query) use ($request) {
                 // Check if this query has already been logged recently
                 if ($this->shouldLogQuery($query)) {
